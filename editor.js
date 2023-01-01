@@ -52,8 +52,8 @@ export default class Editor {
         if(twoway && target.nodeName=='TEXTAREA'){
             target.addEventListener('keyup', () => {
                 this.setContentToElement(target, editor);
-                this.triggerInput();
             });
+            target.addEventListener('change', () => this.triggerInput(editor));
         }
     }
 
@@ -350,7 +350,7 @@ export default class Editor {
     }
 
     getRootEditableElement(element){
-        if(element.contentEditable != 'true'){
+        if(element.hasOwnProperty('contentEditable') && element.contentEditable != 'true'){
             return this.getRootEditableElement(element.parentElement);
         }
         return element;
@@ -385,8 +385,8 @@ export default class Editor {
         }
     }
 
-    triggerInput() {
-        const EditorField = this.getActiveEditorField();
+    triggerInput(editor = null) {
+        const EditorField = editor ?? this.getActiveEditorField();
         if(EditorField){
             EditorField.dispatchEvent(new Event("input"));
         }
