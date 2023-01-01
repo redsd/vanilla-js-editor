@@ -86,6 +86,7 @@ export default class Editor {
                 self.triggerCallback(editorField.id, event.target.innerHTML)
             });
         });
+        document.execCommand('defaultParagraphSeparator', false, 'p');
     }
 
     trackOnKeyDown(editorField){
