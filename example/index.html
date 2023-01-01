@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <title>Vanilla JS Editor Example</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="modulepreload" href="../editor.js">
+    <link rel="modulepreload" href="../helper.js">
+    <link rel="modulepreload" href="../imageHandler.js">
 </head>
 <body>
 
@@ -23,14 +26,14 @@
                style="display: none;">
         <button title="Add image" class="fa-solid  material-symbols-outlined" onclick="document.getElementById('img-input').click()">image</button>
         <button title="Change text color" class="editor-btn-color material-symbols-outlined">format_color_text</button>
-        <button title="Change high lite color" class="editor-btn-highlitecolor material-symbols-outlined">border_color</button>
+        <button title="Change highlight color" class="editor-btn-highlightcolor material-symbols-outlined">border_color</button>
         <button title="add icon" class="editor-btn-icon material-symbols-outlined">add_reaction</button>
     </div>
 
     <div class="button-group">
         <button title="add line" class="editor-btn-hr material-symbols-outlined">horizontal_rule</button>
-        <button title="Align left" class="editor-btn-unorderedlist material-symbols-outlined">format_list_bulleted</button>
-        <button title="Align center" class="editor-btn-orderedlist material-symbols-outlined">format_list_numbered</button>
+        <button title="Bullet list" class="editor-btn-unorderedlist material-symbols-outlined">format_list_bulleted</button>
+        <button title="Numbered list" class="editor-btn-orderedlist material-symbols-outlined">format_list_numbered</button>
     </div>
 
     <div class="button-group">
@@ -74,8 +77,5 @@
     vanillaJSEditor.setlinkEditorToElement('editor', 'editor-source', true);
     vanillaJSEditor.setlinkEditorToElement('editor', 'preview');
 </script>
-<style>
-
-</style>
 </body>
 </html>

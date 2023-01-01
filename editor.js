@@ -105,7 +105,7 @@ export default class Editor {
         this.initButton('.editor-btn-strikethrough', () => document.execCommand('strikeThrough', false, ''));
 
         this.initButton('.editor-btn-color', (el) => this.changeColor(el));
-        this.initButton('.editor-btn-highlitecolor', (el) => this.changeColor(el, true));
+        this.initButton('.editor-btn-highlightcolor', (el) => this.changeColor(el, true));
         this.initButton('.editor-btn-fontsize', (el) => this.changeFontSize(el));
         this.initButton('.editor-btn-headersize', (el) => this.changeHeaderSize(el));
         this.initButton('.editor-btn-link', (el) =>  this.link());
@@ -135,8 +135,9 @@ export default class Editor {
 
     initButton(queryName, fnCallback) {
         document.querySelectorAll(queryName).forEach((el) => {
-            el.addEventListener('click', (curEl) => {
+            el.addEventListener('mousedown', (curEl) => {
                 fnCallback(curEl.target);
+                curEl.preventDefault();
             });
         });
     }
