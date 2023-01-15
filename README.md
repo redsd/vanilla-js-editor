@@ -90,7 +90,7 @@ Below you will find an example to get started
 
 ## Why
 Vanilla JS Editor is build in pure javascript, to have zero depencies on other packages. It only relies on the browsers functionalities.
-The code is meant to be easy to ride, adopt and adjust.
+The code is meant to be easy to read, adopt and adjust.
 The editor is tested in Edge, Chrome (also Android), Firefox and Safari (also iOS, known bug selected text doesn't stay selected).
 
 
